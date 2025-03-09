@@ -104,6 +104,10 @@ vim.g.have_nerd_font = false
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
