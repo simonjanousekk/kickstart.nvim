@@ -268,7 +268,18 @@ require('lazy').setup({
       },
     },
   },
-
+  { -- File Explorer (Sidebar)
+    'nvim-tree/nvim-tree.lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('nvim-tree').setup {
+        view = { width = 30 }, -- Adjust sidebar width
+        git = { enable = true }, -- Show git status
+      }
+      -- Keybinding to toggle file tree
+      vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true, noremap = true })
+    end,
+  },
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -1032,3 +1043,4 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 vim.api.nvim_set_keymap('n', '<Leader>md', ':wa | :!source ~/Documents/mamlas1/mamlas.sh && mamlas dev<CR>', { noremap = true, silent = true })
+vim.opt.shell = '/bin/zsh -l'
