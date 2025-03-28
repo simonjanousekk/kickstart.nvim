@@ -1031,4 +1031,9 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
-vim.api.nvim_set_keymap('n', '<Leader>md', ':wa | :!source ~/Documents/mamlas1/mamlas.sh && mamlas dev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  'n',
+  '<Leader>md',
+  ':wa | :!source ~/Documents/mamlas1/mamlas.sh && mamlas dev<CR>',
+  { noremap = true, silent = true, desc = 'mamlas dev' }
+)
